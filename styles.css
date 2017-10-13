@@ -1,0 +1,56 @@
+input {
+    font-family: sans-serif;
+    color: red;
+}
+
+input.person {
+    color: blue;
+}
+
+#first_name {
+    color: green;
+}
+
+div {
+    border-bottom: 1px solid grey;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form input {
+    background-color: lightgray;
+}
+
+form div > input {
+    background-color: lightblue;
+}
+
+label {
+    color: rgb(102,128,80);
+}
+
+.block {
+    border: 1px solid blue;
+    width: 60%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: "Century Schoolbook L", "DejaVu Serif", sans-serif;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.inside {
+    float: right;
+    width: 150px;
+    padding: 20px;
+    background: lightgreen;
+    margin: 30px;
+    border-radius: 10px;
+}
