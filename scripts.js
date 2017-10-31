@@ -1,20 +1,23 @@
 'use strict';
 
-var op1 = document.getElementById('op1'),
-    op2 = document.getElementById('op2'),
-    result = document.getElementById('result'),
-    buttons = document.getElementsByTagName('button'),
-    i;
+function arrayFill(s, count) {
+    var i,
+        res = '';
 
-function onClick(event) {
-    switch (event.target.innerHTML) {
-        case '+': result.innerHTML = parseFloat(op1.value) + parseFloat(op2.value); break;
-        case '-': result.innerHTML = parseFloat(op1.value) - parseFloat(op2.value); break;
-        case '*': result.innerHTML = parseFloat(op1.value) * parseFloat(op2.value); break;
-        case '/': result.innerHTML = parseFloat(op1.value) / parseFloat(op2.value); break;
+    for (i = 0; i < count; i++) {
+        res += s;
     }
+
+    return res;
 }
 
-for (i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = onClick;
+var i,
+    arr = [],
+    tmp;
+
+for (i = 1; i <= 9; i++) {
+    tmp = arrayFill(i, i);
+    arr.push(tmp);
 }
+
+console.log(arr);
