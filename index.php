@@ -1,6 +1,29 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', true);
 
-//  Дана строка 'html css php'. С помощью функции explode запишите каждое слово этой строки в отдельный элемент массива.
-$str = "css html javascript php";
-$res_str = explode(' ', $str);
-print_r($res_str);
+include 'lib.php';
+
+$user = [
+    'first_name' => '',
+    'last_name' => '',
+    'email' => '',
+    'phone' => '',
+    'confirm' => false,
+];
+
+$errors = [];
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user = processRequest($user);
+    $errors = validateUser($user);
+
+    if (!$errors) {
+        saveUser2($user);
+
+        header('Location: /success.html');
+        exit();
+    }
+}
+
+include 'form.php';
